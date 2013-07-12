@@ -3,6 +3,22 @@ require 'yaml/store'
 class Idea
 	attr_reader :title, :description
 
+	def self.all
+		raw_ideas.map do |data|
+			Idea.new(data[:title], data[:description])
+		end
+	end
+
+	def self.raw_ideas
+		database.transaction do |db|
+			db['ideas']
+		end || []
+	end
+
+	def self.database
+		@database ||= YAML::Store.new('ideabox')
+	end
+
 	def initialize(title, description)
 		@title = title
 		@description = description
@@ -16,6 +32,6 @@ class Idea
 	end
 
 	def database
-		@database ||= YAML::Store.new "ideabox"
+		Idea.database
 	end
 end
