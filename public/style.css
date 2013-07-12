@@ -1,0 +1,13 @@
+body {
+	font-size: 1.3em;
+}
+textarea {
+	width: 500px;
+	height: 200px;
+}
+
+#idea_box_list {
+	border-style: solid;
+	border-color: #000;
+	border-width: 5px;
+}
