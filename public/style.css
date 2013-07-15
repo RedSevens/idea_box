@@ -1,15 +1,14 @@
 body {
+	text-align: center;
 	font-size: 1.3em;
-	background-color: orange
+	background-color: #00FFFF;
 }
+
 textarea {
 	width: 500px;
 	height: 200px;
 }
 
 #idea_box_list {
-	border-style: solid;
-	border-color: #000;
-	border-width: 3px;
-	background-color: #00FFFF;
+	margin-right: 2.5%;
 }
